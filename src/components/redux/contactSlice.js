@@ -13,7 +13,7 @@ const phonebookSlice = createSlice({
       },
     },
     deleteContact: (state, action) => {
-      return state.contacts.filter(contact => contact.id !== action.payload);
+      state.contacts.filter(contacts => contacts.id !== action.payload);
     },
     setFilter: (state, action) => {
       state.filter = action.payload;
