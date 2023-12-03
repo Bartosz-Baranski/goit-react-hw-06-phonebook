@@ -1,4 +1,4 @@
-// import React, { useState } from 'react';
+// import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { setFilter } from 'components/redux/actions';
@@ -8,11 +8,12 @@ import css from './ContactList.module.css';
 
 export function ContactList() {
   const contactList = useSelector(state => state.contact);
+  // const [filter, setFilter] = useState('');
 
   const dispatch = useDispatch();
 
-  const handleDelete = () => {
-    dispatch(deleteContact(contactList.id));
+  const handleDelete = id => {
+    dispatch(deleteContact(id));
   };
 
   const handleFilter = e => {
