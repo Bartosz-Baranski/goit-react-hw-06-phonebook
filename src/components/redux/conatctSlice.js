@@ -4,17 +4,16 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const phonebookSlice = createSlice({
   name: 'contacts',
-  initialState: [],
-  filter: '',
+  initialState: { contacts: [], filter: '' },
 
   reducers: {
     addContact: {
       reducer: (state, action) => {
-        state.push(action.payload);
+        state.contacts.push(action.payload);
       },
     },
     deleteContact: (state, action) => {
-      return state.filter(contacts => contacts.id !== action.payload);
+      return state.contacts.filter(contact => contact.id !== action.payload);
     },
     setFilter: (state, action) => {
       state.filter = action.payload;
