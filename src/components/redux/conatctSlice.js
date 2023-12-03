@@ -4,16 +4,17 @@ import { contactsData } from '../contactsData';
 
 const phonebookSlice = createSlice({
   name: 'contacts',
-  initialState: { contacts: [...contactsData], filter: '' },
+  initialState: [...contactsData],
+  filter: '',
 
   reducers: {
     addContact: {
       reducer: (state, action) => {
-        state.contacts.push(action.payload);
+        state.push(action.payload);
       },
     },
     deleteContact: (state, action) => {
-      // return state.filter(contacts => contacts.id !== action.payload);
+      return state.filter(state => state.id !== action.payload);
     },
     setFilter: (state, action) => {
       state.filter = action.payload;
