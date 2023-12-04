@@ -53,3 +53,4 @@ Save phone book in local storage
 
 ## Project Status
 Project is in progress. Link to project:
+https://bartosz-baranski.github.io/goit-react-hw-06-phonebook/
