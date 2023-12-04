@@ -28,7 +28,7 @@ export function ContactForm() {
 
   return (
     <div className={css.phonebook}>
-      <h1>Phonebook</h1>
+      <h1>Phone book</h1>
       <form className={css.form_section} onSubmit={handleSubmit}>
         <label className={css.phonebook_label}>
           Name

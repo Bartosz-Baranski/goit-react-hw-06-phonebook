@@ -1,25 +1,23 @@
-// import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setFilter } from 'components/redux/actions';
+// import { setFilter } from 'components/redux/actions';
 import { deleteContact } from 'components/redux/contactSlice';
 
 import css from './ContactList.module.css';
 
-export function ContactList({ id }) {
+export function ContactList() {
   const contactList = useSelector(state => state.contact.contacts);
   console.log(contactList);
-  // const [filter, setFilter] = useState('');
 
   const dispatch = useDispatch();
 
-  const handleDelete = () => {
+  const handleDelete = id => {
     dispatch(deleteContact(id));
   };
 
-  const handleFilter = e => {
-    dispatch(setFilter(e.target.value));
-  };
+  // const handleFilter = e => {
+  //   dispatch(setFilter(e.target.value));
+  // };
 
   return (
     <div className={css.contact_list_container}>
@@ -31,7 +29,7 @@ export function ContactList({ id }) {
             type="text"
             name="filter"
             // value={filter}
-            onChange={handleFilter}
+            // onChange={handleFilter}
           ></input>
         </label>
       </form>
@@ -41,7 +39,12 @@ export function ContactList({ id }) {
           <li id={id} key={id} className={css.contact_list_item}>
             <p>{name}</p>
             <p> {number}</p>
-            <button className={css.delete_btn} onClick={handleDelete}>
+            <button
+              className={css.delete_btn}
+              onClick={() => {
+                handleDelete(id);
+              }}
+            >
               Delete contact
             </button>
           </li>

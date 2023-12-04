@@ -1,45 +1,22 @@
-// import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
-// import { useState, useEffect } from 'react';
-// import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { saveContacts } from 'components/redux/actions';
+
 import css from './Phonebook.module.css';
 
 export function Phonebook() {
-  // const [contacts, setContacts] = useState([]);
+  const dispatch = useDispatch();
+  const contactsLocalStorage = useSelector(state => state.contacts);
 
-  // useEffect(() => {
-  //   localStorage.setItem('contacts', JSON.stringify(contacts));
-  // }, [contacts]);
-
-  // useEffect(() => {
-  //   const localStorageContact = localStorage.getItem('contacts');
-  //   if (localStorageContact) {
-  //     setContacts(JSON.parse(localStorageContact));
-  //   }
-  // }, []);
-
-  // const addContact = newContact => {
-  //   const existedContact = contacts.some(
-  //     contact =>
-  //       contact.name === newContact.name && contact.number === newContact.number
-  //   );
-  //   if (existedContact) {
-  //     Notify.warning('This contact already exists');
-  //     return;
-  //   }
-  //   newContact.id = nanoid();
-  //   setContacts(prevContacts => [...prevContacts, newContact]);
-  // };
-
-  // const deleteContact = id => {
-  //   setContacts(prevContacts =>
-  //     prevContacts.filter(contact => contact.id !== id)
-  //   );
-  // };
+  useEffect(() => {
+    dispatch(saveContacts());
+  }, [contactsLocalStorage, dispatch]);
 
   return (
     <div className={css.phonebook_box}>
