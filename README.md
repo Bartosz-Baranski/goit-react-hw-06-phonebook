@@ -17,10 +17,10 @@ Application Phone book
 
 Project is created with: 
 ```
-*React - version 18.1.0 
-*ReduX Toolkit - version 1.9.7
-*React Hooks
-*Nanoid - version 5.0.4
+* React - version 18.1.0 
+* ReduX Toolkit - version 1.9.7
+* React Hooks
+* Nanoid - version 5.0.4
 ```
 ## Setup
 
