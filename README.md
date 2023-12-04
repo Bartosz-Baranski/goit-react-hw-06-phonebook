@@ -8,7 +8,7 @@ Application Phone book
 - [Technologies Used](#technologies-used)
 - [Setup](#setup)
 - [Usage](#usage)
-
+- [Project Status](#project-status)
 ## General Information
 
 #### This application serve to do create of its own phone book.
@@ -16,11 +16,12 @@ Application Phone book
 ## Technologies Used
 
 Project is created with: 
+```
 *React - version 18.1.0 
 *ReduX Toolkit - version 1.9.7
 *React Hooks - version 
 *Nanoid - version 5.0.4
-
+```
 ## Setup
 
 To run this project, install it locally using npm:
@@ -49,3 +50,6 @@ Remove contact from phone book
 Save phone book in local storage
 
 ![delete](./img/LSPhonebook.png)
+
+## Project Status
+Project is in progress. Link to project:
