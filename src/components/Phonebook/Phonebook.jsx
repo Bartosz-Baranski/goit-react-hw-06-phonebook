@@ -12,7 +12,7 @@ import css from './Phonebook.module.css';
 
 export function Phonebook() {
   const dispatch = useDispatch();
-  const contactsLocalStorage = useSelector(state => state.contacts);
+  const contactsLocalStorage = useSelector(state => state.contact.contacts);
 
   useEffect(() => {
     dispatch(saveContacts());

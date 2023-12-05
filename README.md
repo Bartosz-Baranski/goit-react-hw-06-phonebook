@@ -9,19 +9,22 @@ Application Phone book
 - [Setup](#setup)
 - [Usage](#usage)
 - [Project Status](#project-status)
+
 ## General Information
 
 #### This application serve to do create of its own phone book.
 
 ## Technologies Used
 
-Project is created with: 
+Project is created with:
+
 ```
-* React - version 18.1.0 
+* React - version 18.1.0
 * ReduX Toolkit - version 1.9.7
 * React Hooks
 * Nanoid - version 5.0.4
 ```
+
 ## Setup
 
 To run this project, install it locally using npm:
@@ -45,12 +48,13 @@ Add contact to phone book
 
 Remove contact from phone book
 
-![delete](./img/deleete.png)
+![Delete](./img/deleete.png)
 
 Save phone book in local storage
 
-![delete](./img/LSPhonebook.png)
+![LocalStorage](./img/LSPhonebook.png)
 
 ## Project Status
+
 Project is in progress. Link to project:
 https://bartosz-baranski.github.io/goit-react-hw-06-phonebook/

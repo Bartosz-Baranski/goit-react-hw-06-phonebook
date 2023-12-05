@@ -19,7 +19,11 @@ const phonebookSlice = createSlice({
       state.contacts = contactsAfterDelete;
     },
     setFilter: (state, action) => {
-      state.filter = action.payload;
+      const filterContact = () =>
+        state.contacts.filter(
+          contacts => contacts.name || contacts.number === action.payload
+        );
+      return filterContact([state.contacts.filter]);
     },
   },
   extraReducers: builder => {
