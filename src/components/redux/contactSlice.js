@@ -18,13 +18,13 @@ const phonebookSlice = createSlice({
       );
       state.contacts = contactsAfterDelete;
     },
-    setFilter: (state, action) => {
-      const filterContact = () =>
-        state.contacts.filter(
-          contacts => contacts.name || contacts.number === action.payload
-        );
-      return filterContact([state.contacts.filter]);
-    },
+    // setFilter: (state, action) => {
+    //   const filterContact = () =>
+    //     state.contacts.filter(
+    //       contacts => contacts.name || contacts.number === action.payload
+    //     );
+    //   return filterContact([state.contacts.filter]);
+    // },
   },
   extraReducers: builder => {
     builder.addCase(saveContacts, state => {
