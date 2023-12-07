@@ -6,6 +6,7 @@ import { deleteContact } from 'components/redux/contactSlice';
 import css from './ContactList.module.css';
 
 export function ContactList() {
+  // const [filter, setFilter] = useState('');
   const contactList = useSelector(state => state.contact.contacts);
   console.log(contactList);
 
@@ -29,7 +30,7 @@ export function ContactList() {
             type="text"
             name="filter"
             // value={filter}
-            // onChange={handleFilter()}
+            // onChange={handleChange}
           ></input>
         </label>
       </form>
