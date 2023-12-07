@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { saveContacts, setFilter } from './actions';
+import { saveContacts } from './actions';
 
 const phonebookSlice = createSlice({
   name: 'contacts',
