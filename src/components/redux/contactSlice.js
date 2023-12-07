@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { saveContacts } from './actions';
+import { saveContacts} from './actions';
 
 const phonebookSlice = createSlice({
   name: 'contacts',
@@ -18,12 +18,12 @@ const phonebookSlice = createSlice({
       );
       state.contacts = contactsAfterDelete;
     },
-    // setFilter: (state, action) => {
-    //   const filterContact = state.contacts.filter(
-    //     contacts => contacts.name || contacts.number === action.payload
-    //   );
-    //   state.contacts = filterContact;
-    // },
+    setFilter: (state, action) => {
+      const filterContact = state.contacts.filter(
+        contacts => contacts.name || contacts.number === action.payload
+      );
+      state.contacts = filterContact;
+    },
   },
   extraReducers: builder => {
     builder.addCase(saveContacts, state => {

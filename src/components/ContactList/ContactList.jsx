@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-// import { setFilter } from 'components/redux/actions';
+import { setFilter } from 'components/redux/actions';
 import { deleteContact } from 'components/redux/contactSlice';
 
 import css from './ContactList.module.css';
@@ -16,9 +16,9 @@ export function ContactList() {
     dispatch(deleteContact(id));
   };
 
-  // const handleFilter = name => {
-  //   dispatch(setFilter(name));
-  // };
+  const handleFilter = ({ name, number }) => {
+    dispatch(setFilter(name, number));
+  };
 
   return (
     <div className={css.contact_list_container}>
@@ -30,7 +30,7 @@ export function ContactList() {
             type="text"
             name="filter"
             // value={filter}
-            // onChange={handleChange}
+            onChange={() => handleFilter()}
           ></input>
         </label>
       </form>
