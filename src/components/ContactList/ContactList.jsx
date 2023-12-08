@@ -6,7 +6,7 @@ import { deleteContact } from 'components/redux/contactSlice';
 import css from './ContactList.module.css';
 
 export function ContactList() {
-  // const [filter, setFilter] = useState('');
+  const filter = useSelector(state => state.contact.filter);
   const contactList = useSelector(state => state.contact.contacts);
   console.log(contactList);
 
@@ -20,6 +20,13 @@ export function ContactList() {
     dispatch(setFilter(name, number));
   };
 
+  const filteredContacts = contactList.filter(({ name, number }) => {
+    return (
+      name.toLowerCase().includes(filter.name.toLowerCase()) &&
+      number.includes(filter.number)
+    );
+  });
+
   return (
     <div className={css.contact_list_container}>
       <h2>Contacts</h2>
@@ -30,13 +37,15 @@ export function ContactList() {
             type="text"
             name="filter"
             // value={filter}
-            onChange={() => handleFilter()}
+            onChange={e =>
+              handleFilter({ name: e.target.value, number: filter.number })
+            }
           ></input>
         </label>
       </form>
 
       <ul className={css.contact_list}>
-        {contactList.map(({ name, number, id }) => (
+        {filteredContacts.map(({ name, number, id }) => (
           <li id={id} key={id} className={css.contact_list_item}>
             <p>{name}</p>
             <p> {number}</p>
